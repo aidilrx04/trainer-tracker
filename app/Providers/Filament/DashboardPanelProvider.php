@@ -25,7 +25,8 @@ class DashboardPanelProvider extends PanelProvider
     {
         return $panel
             ->id('dashboard')
-            ->path('dashboard')
+            ->path('')
+            ->login()
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -52,6 +53,9 @@ class DashboardPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            // ->spa()
+            ->profile()
+        ;
     }
 }

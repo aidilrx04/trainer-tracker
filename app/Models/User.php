@@ -44,4 +44,9 @@ class User extends Authenticatable
     {
         return $this->role->name === 'admin';
     }
+
+    public function trainer()
+    {
+        return $this->hasOne(TrainerProfile::class);
+    }
 }

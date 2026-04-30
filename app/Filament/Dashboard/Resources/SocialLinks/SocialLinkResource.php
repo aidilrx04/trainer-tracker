@@ -9,10 +9,12 @@ use App\Filament\Dashboard\Resources\SocialLinks\Schemas\SocialLinkForm;
 use App\Filament\Dashboard\Resources\SocialLinks\Tables\SocialLinksTable;
 use App\Models\SocialLink;
 use BackedEnum;
+use Filament\Facades\Filament;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class SocialLinkResource extends Resource
 {
@@ -37,6 +39,12 @@ class SocialLinkResource extends Resource
         return [
             //
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->where('trainer_profile_id', Filament::auth()->user()->trainer->id);
     }
 
     public static function getPages(): array

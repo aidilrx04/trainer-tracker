@@ -16,16 +16,17 @@ class TrainerProfileSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = new User();
-        $user->role_id = Role::getTrainer()->id;
-        $user->name = 'Test Trainer';
-        $user->password = Hash::make('123123');
-        $user->email = 'trainer@mail.com';
-
-        $user->save();
-
-        $user->refresh();
+        $user = User::factory(1)->create([
+            'email' => 'trainer@mail.com',
+            'role_id' => Role::getTrainer()->id
+        ])->first();
 
         TrainerProfile::factory(1)->for($user)->create();
+
+        $user2 = User::factory(1)->create([
+            'role_id' => Role::getTrainer()->id
+        ])->first();
+
+        TrainerProfile::factory(1)->for($user2)->create();
     }
 }

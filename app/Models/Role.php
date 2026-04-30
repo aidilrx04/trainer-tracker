@@ -9,4 +9,9 @@ class Role extends Model
 {
     /** @use HasFactory<\Database\Factories\RoleFactory> */
     use HasFactory;
+
+    public static function getTrainer()
+    {
+        return Role::where('name', 'trainer')->get()->first();
+    }
 }

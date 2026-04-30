@@ -14,7 +14,7 @@ class UsersTable
     {
         return $table
             ->columns([
-                TextColumn::make('role_id')
+                TextColumn::make('role.name')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('name')

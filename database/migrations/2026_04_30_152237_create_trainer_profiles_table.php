@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('trainer_profiles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->string('full_name');
-            $table->string('email');
-            $table->string('phone_number');
-            $table->integer('years_experience');
+            $table->string('full_name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->integer('years_experience')->nullable();
             $table->string('profile_picture')->nullable();
             $table->text('notable_clients')->nullable();
             $table->string('avg_evaluation_score')->nullable();

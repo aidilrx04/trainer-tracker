@@ -41,6 +41,26 @@ class TrainerProfile extends Model
     {
         return $this->tags()->where('category', 'specialization');
     }
+    public function industries()
+    {
+        return $this->tags()->where('category', 'industry');
+    }
+    public function trainingMethods()
+    {
+        return $this->tags()->where('category', 'training_methods');
+    }
+    public function tools()
+    {
+        return $this->tags()->where('category', 'tools');
+    }
+    public function consultings()
+    {
+        return $this->tags()->where('category', 'consulting');
+    }
+    public function coachings()
+    {
+        return $this->tags()->where('category', 'coaching');
+    }
 
     public function languages()
     {

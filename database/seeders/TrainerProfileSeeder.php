@@ -16,17 +16,19 @@ class TrainerProfileSeeder extends Seeder
      */
     public function run(): void
     {
+
+        $trainers = User::where('role_id', Role::getTrainer()->id)->get();;
+
+        foreach ($trainers as $trainer) {
+            TrainerProfile::factory(1)->for($trainer)->create();
+        }
+
+
         $user = User::factory(1)->create([
             'email' => 'trainer@mail.com',
             'role_id' => Role::getTrainer()->id
         ])->first();
 
         TrainerProfile::factory(1)->for($user)->create();
-
-        $user2 = User::factory(1)->create([
-            'role_id' => Role::getTrainer()->id
-        ])->first();
-
-        TrainerProfile::factory(1)->for($user2)->create();
     }
 }

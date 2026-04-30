@@ -2,10 +2,15 @@
 
 namespace App\Models;
 
+use Database\Factories\TrainerEducationFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class TrainerEducation extends Model
 {
+    /** @use HasFactory<TrainerEducationFactory> */
+    use HasFactory;
+
     protected $table = 'trainer_educations';
 
     protected $fillable = [
@@ -20,5 +25,10 @@ class TrainerEducation extends Model
     public function documents()
     {
         return $this->hasMany(EducationDocument::class);
+    }
+
+    public function trainerProfile()
+    {
+        return $this->belongsTo(TrainerProfile::class);
     }
 }

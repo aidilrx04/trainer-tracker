@@ -34,7 +34,7 @@ class TrainerProfile extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class, 'tag_trainer');
+        return $this->belongsToMany(Tag::class, 'tag_trainer', 'trainer_profile_id', 'tag_id', 'id', 'id');
     }
 
     public function specializations()

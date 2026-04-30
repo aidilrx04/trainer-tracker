@@ -18,7 +18,18 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
         $this->call([
             RoleSeeder::class,
-            TrainerProfileSeeder::class
+            UserSeeder::class,
+            TrainerProfileSeeder::class,
+            SocialLinkSeeder::class,
+            TrainerEducationSeeder::class,
+            TrainerAwardSeeder::class,
+            TrainerCertificationSeeder::class,
+            TrainerExperienceSeeder::class,
+            TrainerEngagementSeeder::class,
+            TrainerLanguageSeeder::class,
+            TrainerPublicationSeeder::class,
+            TagSeeder::class,
+            TrainerTagsSeeder::class,
         ]);
 
         User::factory()->create([

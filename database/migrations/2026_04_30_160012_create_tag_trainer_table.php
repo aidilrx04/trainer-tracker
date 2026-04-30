@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tag_trainer', function (Blueprint $table) {
             $table->id();
             $table->foreignId('trainer_profile_id')->constrained('trainer_profiles')->onDelete('cascade');
-            $table->foreignId('tag_id')->constrained('tag_trainer')->onDelete('cascade');
+            $table->foreignId('tag_id')->constrained('tags')->onDelete('cascade');
             $table->timestamps();
         });
     }

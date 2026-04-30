@@ -19,6 +19,7 @@ class TrainerProfileFactory extends Factory
     {
         return [
             'full_name' => fake()->name(),
+            'email' => fake()->email(),
             'home_address' => fake()->address(),
             'phone_number' => fake()->phoneNumber(),
             'years_experience' => fake()->numberBetween(1, 50),

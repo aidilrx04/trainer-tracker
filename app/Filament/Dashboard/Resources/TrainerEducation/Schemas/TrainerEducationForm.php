@@ -2,6 +2,7 @@
 
 namespace App\Filament\Dashboard\Resources\TrainerEducation\Schemas;
 
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 

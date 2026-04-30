@@ -2,10 +2,23 @@
 
 namespace App\Models;
 
+use Database\Factories\TrainerCertificationFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class TrainerCertification extends Model
 {
+    /** @use HasFactory<TrainerCertificationFactory> */
+    use HasFactory;
+
+    protected $fillable = [
+        'trainer_profile_id',
+        'certification_name',
+        'issuing_body',
+        'year_obtained',
+        'expires_at'
+    ];
+
     protected $casts = [
         'expires_at' => 'date'
     ];

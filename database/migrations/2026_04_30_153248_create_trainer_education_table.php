@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('completion_year');
             $table->string('location');
             $table->string('grade')->nullable();
+            $table->json('document_paths')->nullable();
 
             $table->timestamps();
         });

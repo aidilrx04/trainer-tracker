@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Dashboard\Pages\Login;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -26,7 +27,7 @@ class DashboardPanelProvider extends PanelProvider
         return $panel
             ->id('dashboard')
             ->path('')
-            ->login()
+            ->login(Login::class)
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -55,7 +56,6 @@ class DashboardPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->spa()
-            ->profile()
         ;
     }
 }

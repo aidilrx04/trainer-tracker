@@ -14,7 +14,8 @@ class TrainerProfile extends Model
         'phone_number',
         'email',
         'years_experience',
-        'profile_picture'
+        'profile_picture',
+        'cv_path'
     ];
 
     public function user()
@@ -30,6 +31,11 @@ class TrainerProfile extends Model
     public function educations()
     {
         return $this->hasMany(TrainerEducation::class)->orderByDesc('completion_year');
+    }
+
+    public function certifications()
+    {
+        return $this->hasMany(TrainerCertification::class)->orderByDesc('year_obtained');
     }
 
     public function tags()
@@ -60,6 +66,10 @@ class TrainerProfile extends Model
     public function coachings()
     {
         return $this->tags()->where('category', 'coaching');
+    }
+    public function assessments()
+    {
+        return $this->tags()->where('category', 'assessment');
     }
 
     public function languages()

@@ -30,12 +30,7 @@ class DatabaseSeeder extends Seeder
             TrainerPublicationSeeder::class,
             TagSeeder::class,
             TrainerTagsSeeder::class,
-        ]);
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'role_id' => 2
+            RecentTrainingProgramSeeder::class,
         ]);
     }
 }

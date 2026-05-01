@@ -25,7 +25,7 @@ class TrainerProfileSeeder extends Seeder
 
 
         $user = User::factory(1)->create([
-            'email' => 'trainer@mail.com',
+            'name' => 'trainer',
             'role_id' => Role::getTrainer()->id
         ])->first();
 

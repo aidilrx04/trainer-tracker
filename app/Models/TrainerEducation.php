@@ -19,13 +19,18 @@ class TrainerEducation extends Model
         'institution_name',
         'completion_year',
         'location',
-        'grade'
+        'grade',
+        'document_paths',
     ];
 
-    public function documents()
-    {
-        return $this->hasMany(EducationDocument::class);
-    }
+    protected $casts = [
+        'document_paths' => 'array'
+    ];
+
+    // public function documents()
+    // {
+    //     return $this->hasMany(EducationDocument::class);
+    // }
 
     public function trainerProfile()
     {

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->year('year_obtained');
 
             $table->date('expires_at')->nullable();
+            $table->json('document_paths')->nullable();
 
             $table->timestamps();
         });

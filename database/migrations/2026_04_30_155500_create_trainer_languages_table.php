@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('trainer_profile_id')->constrained('trainer_profiles')->onDelete('cascade');
 
             $table->string('language');
-            $table->enum('profiency', [
+            $table->enum('proficiency', [
                 'Native',
                 'Fluent',
                 'Professional Working Proficiency',
@@ -24,7 +24,7 @@ return new class extends Migration
                 'Basic'
             ]);
 
-            
+
             $table->timestamps();
         });
     }

@@ -19,7 +19,8 @@ class TagSeeder extends Seeder
             'training_methods',
             'tools',
             'consulting',
-            'coaching'
+            'coaching',
+            'assessment',
         ];
 
         foreach ($categories as $cat) {

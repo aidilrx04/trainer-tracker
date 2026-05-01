@@ -19,7 +19,7 @@ class TrainerLanguageFactory extends Factory
     {
         return [
             'language' => fake()->word(),
-            'profiency' => fake()->randomElement(['Native', 'Fluent', 'Professional Working Proficiency', 'Conversational', 'Basic']),
+            'proficiency' => fake()->randomElement(['Native', 'Fluent', 'Professional Working Proficiency', 'Conversational', 'Basic']),
         ];
     }
 }

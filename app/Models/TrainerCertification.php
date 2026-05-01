@@ -16,11 +16,13 @@ class TrainerCertification extends Model
         'certification_name',
         'issuing_body',
         'year_obtained',
-        'expires_at'
+        'expires_at',
+        'document_paths'
     ];
 
     protected $casts = [
-        'expires_at' => 'date'
+        'expires_at' => 'date',
+        'document_paths' => 'array'
     ];
 
     public function trainerProfile()

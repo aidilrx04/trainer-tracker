@@ -14,7 +14,7 @@ class TrainerLanguage extends Model
     protected $fillable = [
         'trainer_profile_id',
         'language',
-        'profiency',
+        'proficiency',
     ];
 
     public function trainerProfile()
